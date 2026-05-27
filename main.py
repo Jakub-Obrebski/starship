@@ -176,8 +176,6 @@ game_won = False
 tick = 0
 
 def draw_pixel_char(surf, x, y, facing, t):
-	bob = math.sin(t * 0.08) * 1.5
-	y += bob
 	pygame.draw.rect(surf, C_PLAYER2, (x-4, y-2, 8, 10))
 	pygame.draw.rect(surf, C_PLAYER,  (x-3, y-1, 6,  8))
 	pygame.draw.rect(surf, C_CREAM,   (x-4, y-11,9, 9))
@@ -278,13 +276,13 @@ def draw_win(surf):
 	overlay.fill((10, 8, 20, 210))
 	surf.blit(overlay, (0, 0))
 	lines = [
-		("✦ MISJA UKOŃCZONA ✦", font_big,   C_ARTIFACT),
+		("MISJA UKOŃCZONA", font_big,   C_ARTIFACT),
 		("", None, None),
 		("Zebrałaś wszystkie 6 artefaktów.", font_med,   C_CREAM),
 		("Historia cywilizacji Kepler-7b", font_small, C_STAR_DIM),
 		("zostanie przekazana na Ziemię.", font_small, C_STAR_DIM),
 		("", None, None),
-		("Ich pamięć żyje dzięki Tobie. 🌸", font_med,   C_PINK),
+		("Ich pamięć żyje dzięki Tobie.", font_med,   C_PINK),
 		("", None, None),
 		("[ ESC aby wyjść ]", font_small, C_STAR_DIM),
 	]
